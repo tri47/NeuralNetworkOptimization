@@ -41,7 +41,7 @@ def return_stratified_kcv_results(clf, x_data, y_data, verbose = False, last_cur
         print('a CV')
         x_train, x_test = x_data[train_index], x_data[test_index]
         y_train, y_test = y_data[train_index], y_data[test_index]
-       
+        '''
         if False:
             sm = SMOTE(random_state=12, ratio = 0.5)
             x_train, y_train = sm.fit_sample(x_train, y_train)
@@ -63,7 +63,7 @@ def return_stratified_kcv_results(clf, x_data, y_data, verbose = False, last_cur
             print (np.asarray((unique, counts)).T)
             y_train = np.array([y_train]).transpose()
             print(np.shape(y_train))            
-
+        '''
         start_time = time.time()
         results = clf.fit(x_train, y_train)
         train_times.append(time.time()-start_time)
